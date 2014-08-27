@@ -16,15 +16,16 @@ don't use the "extra" composer config option.
 
 ```json
 {
-  "require": {"ingenerator/pigeonhole": "0.1.*@dev" }
-  "extra":   {"installer-paths": { "vendor/{$vendor}/{$name}": ["type:kohana-module"] }}
+  "require": {"ingenerator/pigeonhole": "0.1.*@dev"},
+  "extra":   {"installer-paths":{"vendor/{$vendor}/{$name}":["type:kohana-module"]}}
 }
 ```
 
 In your bootstrap, add it to your modules list:
 ```php
     Kohana::modules(array(
-        'pigeonhole' => BASEDIR.'vendor/ingenerator/pigeonhole' // Or MODPATH.'pigeonhole' if using old-style kohana paths
+        'pigeonhole' => BASEDIR.'vendor/ingenerator/pigeonhole' 
+        // Or MODPATH.'pigeonhole' if using old-style kohana paths
     );
 ```
 
@@ -35,7 +36,11 @@ To set a simple string message:
 ```php
 class Controller_Something {
     public function action_message() {
-        $message    = new \Ingenerator\Pigenohole\Message('Look Out!', 'There's a monster behind you', \Ingenerator\Pigeonhole\Message::DANGER);
+        $message    = new \Ingenerator\Pigenohole\Message(
+            'Look Out!', 
+            'There\'s a monster behind you', 
+            \Ingenerator\Pigeonhole\Message::DANGER
+        );
         $pigeonhole = new \Ingenerator\Pigeonhole\Pigeonhole(Session::instance());
         $pigeonhole->add($message);
         $this->redirect('/');
@@ -47,9 +52,15 @@ For the simplest way to render messages using Kohana's native view rendering:
 ```php
 /// views/template/global.php
 <html>
-<head><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"></head>
+<head>
+  <link rel="stylesheet" 
+        href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
 <body>
-    <?=View::factory('pigeonhole/messages', array('pigeonhole' => new \Ingenerator\Pigeonhole\Pigeonhole(Session::instance())))->render();?>
+    <?=View::factory(
+        'pigeonhole/messages', 
+        array('pigeonhole' => new \Ingenerator\Pigeonhole\Pigeonhole(Session::instance()))
+    )->render();?>
 </body>
 ```
 
@@ -66,7 +77,10 @@ Formats the output of kohana validation errors with a given message file:
 
 ```php
 $validation = Validation::factory($post)->rule('email', 'not_empty');
-$message = new \Ingenerator\Pigeonhole\Message\ValidationMessage($validation, 'forms/login');
+$message = new \Ingenerator\Pigeonhole\Message\ValidationMessage(
+    $validation, 
+    'forms/login'
+);
 ```
 
 ### Kohana messages
@@ -83,7 +97,12 @@ return array(
 );
 
 /// Controller
-$message = new \Ingenerator\Pigeonhole\Message\KohanaMessage('actions', 'signed_in', array(':email' => $email), \Ingenerator\Pigeonhole\Message::SUCCESS);
+$message = new \Ingenerator\Pigeonhole\Message\KohanaMessage(
+    'actions', 
+    'signed_in', 
+    array(':email' => $email), 
+    \Ingenerator\Pigeonhole\Message::SUCCESS
+);
 ```
 
 ## Testing and developing

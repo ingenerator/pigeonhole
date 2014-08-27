@@ -1,0 +1,45 @@
+{
+  "name":        "ingenerator/pigeonhole",
+  "description": "Flash message management for kohana",
+  "keywords":    ["kohana"],
+  "homepage":    "https://github.com/ingenerator/pigeonhole",
+  "type":        "kohana-module",
+  "license":     "BSD",
+  "authors":     [
+    {
+      "name":     "Andrew Coulton",
+      "email":    "andrew@ingenerator.com",
+      "homepage": "http://www.ingenerator.com"
+    }
+  ],
+  "require": {
+    "php":           ">=5.3.3",
+    "kohana/core":   "3.3.*"
+  },
+  "require-dev": {
+    "kohana/koharness": "*@dev",
+    "phpspec/phpspec":  "~2.0@dev"
+  },
+  "suggest": {
+    "zeelot/kohana-dependencies": "Service container for Kohana"
+  },
+  "support": {
+    "issues": "https://github.com/ingenerator/pigeonhole/issues",
+    "source": "https://github.com/ingenerator/pigeonhole"
+  },
+  "autoload": {
+    "psr-0": {
+      "spec":                         ""
+    }
+  },
+  "bin": [],
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.1.x-dev"
+    }
+  },
+  "config": {
+    "bin-dir":           "bin",
+    "preferred-install": "dist"
+  }
+}

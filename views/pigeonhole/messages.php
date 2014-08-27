@@ -10,9 +10,9 @@
 ?>
 <?php if ($pigeonhole->has_messages()): ?>
   <?php foreach ($pigeonhole->clear() as $tmp_message): ?>
-    <div class="alert <?=$tmp_message->class;?>">
-      <strong><?=$tmp_message->title;?></strong>
-        <?=$tmp_message->message; ?>
+    <div class="alert <?php echo $tmp_message->class;?>">
+      <strong><?php echo $tmp_message->title;?></strong>
+        <?php echo $tmp_message->message; ?>
     </div>
   <?php endforeach; ?>
 <?php endif; ?>

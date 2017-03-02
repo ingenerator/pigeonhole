@@ -27,9 +27,9 @@
     "issues": "https://github.com/ingenerator/pigeonhole/issues",
     "source": "https://github.com/ingenerator/pigeonhole"
   },
-  "autoload": {
-    "psr-0": {
-      "spec":                         ""
+  "autoload-dev": {
+    "psr-4": {
+      "spec\\": "spec"
     }
   },
   "bin": [],

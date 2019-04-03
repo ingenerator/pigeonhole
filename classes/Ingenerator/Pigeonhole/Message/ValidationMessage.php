@@ -30,7 +30,7 @@ class ValidationMessage extends Message {
 	public function __construct(\Validation $validation, $message_file, $title = 'Sorry, your request could not be processed', $class = Message::DANGER) {
 		$this->title = $title;
 		$this->class = $class;
-		$this->message = implode(PHP_EOL, $validation->errors($message_file));
+		$this->message = \implode(PHP_EOL, $validation->errors($message_file));
 	}
 
 } 

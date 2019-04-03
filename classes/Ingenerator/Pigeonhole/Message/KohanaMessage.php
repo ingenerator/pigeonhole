@@ -59,11 +59,11 @@ class KohanaMessage extends Message {
 		$message = \Kohana::message($message_file, $path);
 
 		if ($message) {
-			return strtr($message, $params);
+			return \strtr($message, $params);
 		} else {
 			$full_path = $message_file.":".$path;
 			\Kohana::$log->add(\Log::WARNING, "Unknown message - ".$full_path);
-			return $full_path.' '.json_encode($params);
+			return $full_path.' '.\json_encode($params);
 		}
 	}
 } 

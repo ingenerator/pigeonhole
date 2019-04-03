@@ -71,8 +71,8 @@ class MessagesSpec extends ObjectBehavior
 	{
 		$pigeonhole->has_messages()->willReturn(TRUE);
 		
-		$messages = func_get_args();
-		array_shift($messages);
+		$messages = \func_get_args();
+		\array_shift($messages);
 		$pigeonhole->clear()->willReturn($messages);
 	}
 }

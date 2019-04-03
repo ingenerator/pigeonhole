@@ -55,7 +55,7 @@ class Pigeonhole
 	 */
 	public function has_messages()
     {
-		return (count($this->peek()) > 0);
+		return (\count($this->peek()) > 0);
     }
 
 	/**

@@ -1,7 +1,7 @@
 <?php
-// Configuration for koharness - builds a standalone skeleton Kohana app for running specs
-return array(
-	'modules' => array(
-		'pigeonhole' => __DIR__,
-	)
-);
+return [
+    'syspath' => __DIR__.'/vendor/ingenerator/kohana-core',
+    'modules' => [
+        'pigeonhole' => __DIR__,
+    ],
+];

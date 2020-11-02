@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+## 1.1.0 / 2020-11-02
+* Support php 7.4
+
 ## 1.0.0 / 2019-04-03
 * Drop support for PHP <=5.5
 * Ensure support on php7.2

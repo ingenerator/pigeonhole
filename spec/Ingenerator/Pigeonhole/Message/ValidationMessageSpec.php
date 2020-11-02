@@ -2,37 +2,38 @@
 
 namespace spec\Ingenerator\Pigeonhole\Message;
 
+use Ingenerator\Pigeonhole\Message\ValidationMessage;
 use spec\ObjectBehavior;
-use Prophecy\Argument;
+use Validation;
 
 class ValidationMessageSpec extends ObjectBehavior
 {
     /**
-     * @var \Ingenerator\Pigeonhole\Message\ValidationMessage
+     * @var ValidationMessage
      */
     protected $subject;
-    
-    /**
-     * @param \Validation $validation
-     */
-    function let($validation)
-    {
-      $this->beConstructedWith($validation, 'messages');
-      $validation->errors('messages')->willReturn(array());
-    }
 
     function it_is_initializable()
     {
-        $this->subject->shouldHaveType('Ingenerator\Pigeonhole\Message\ValidationMessage');
+        $this->subject->shouldHaveType(ValidationMessage::class);
     }
 
     /**
-     * @param \Validation $validation
+     * @param Validation $validation
      */
-    function its_message_is_the_kohana_validation_errors($validation)
+    function its_message_is_the_kohana_validation_errors(Validation $validation)
     {
-      $this->beConstructedWith($validation, 'forms/foo');
-      $validation->errors('forms/foo')->willReturn(array('field' => 'field must not be empty', 'other' => 'other is bad'));
-      $this->subject->message->shouldBe('field must not be empty'.PHP_EOL.'other is bad');
+        $this->beConstructedWith($validation, 'forms/foo');
+        $validation->errors('forms/foo')->willReturn(['field' => 'field must not be empty', 'other' => 'other is bad']);
+        $this->subject->message->shouldBe('field must not be empty'.PHP_EOL.'other is bad');
+    }
+
+    /**
+     * @param Validation $validation
+     */
+    function let(Validation $validation)
+    {
+        $this->beConstructedWith($validation, 'messages');
+        $validation->errors('messages')->willReturn([]);
     }
 }

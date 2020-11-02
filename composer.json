@@ -13,13 +13,19 @@
     }
   ],
   "require": {
-    "php":           "^7.2",
-    "kohana/core":   "3.3.*"
+    "php":                     "^7.4",
+    "ingenerator/kohana-core": "^4.7"
   },
   "require-dev": {
-    "kohana/koharness": "*@dev",
-    "phpspec/phpspec":  "^2.0"
+    "kohana/koharness": "dev-master",
+    "phpspec/phpspec":  "^6.1"
   },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://php-packages.ingenerator.com"
+    }
+  ],
   "suggest": {
     "zeelot/kohana-dependencies": "Service container for Kohana"
   },
@@ -32,14 +38,12 @@
       "spec\\": "spec"
     }
   },
-  "bin": [],
   "extra": {
     "branch-alias": {
       "dev-master": "0.1.x-dev"
     }
   },
   "config": {
-    "bin-dir":           "bin",
     "preferred-install": "dist"
   }
 }

@@ -1,7 +1,7 @@
 # Pigeonhole - clean flash message management for Kohana
 
 [![License](https://poser.pugx.org/ingenerator/pigeonhole/license.svg)](https://packagist.org/packages/ingenerator/pigeonhole)
-[![Master Build Status](https://travis-ci.org/ingenerator/pigeonhole.png?branch=master)](https://travis-ci.org/ingenerator/pigeonhole)
+
 [![Latest Stable Version](https://poser.pugx.org/ingenerator/pigeonhole/v/stable.svg)](https://packagist.org/packages/ingenerator/pigeonhole)
 [![Total Downloads](https://poser.pugx.org/ingenerator/pigeonhole/downloads.svg)](https://packagist.org/packages/ingenerator/pigeonhole)
 [![Latest Unstable Version](https://poser.pugx.org/ingenerator/pigeonhole/v/unstable.svg)](https://packagist.org/packages/ingenerator/pigeonhole)
@@ -16,7 +16,7 @@ don't use the "extra" composer config option.
 
 ```json
 {
-  "require": {"ingenerator/pigeonhole": "0.1.*@dev"},
+  "require": {"ingenerator/pigeonhole": "^1.0"},
   "extra":   {"installer-paths":{"vendor/{$vendor}/{$name}":["type:kohana-module"]}}
 }
 ```
@@ -108,7 +108,7 @@ $message = new \Ingenerator\Pigeonhole\Message\KohanaMessage(
 ## Testing and developing
 
 pigeonhole has a suite of [PhpSpec](http://phpspec.net) specifications. You'll need a skeleton Kohana application to 
-run them, you can use [koharness](https://github.com/ingenerator/koharness) to create one. See [travis.yml](travis.yml) for 
+run them, you can use [koharness](https://github.com/ingenerator/koharness) to create one. See [test.yml](.github/workflows/test.yml) for 
 the build steps required.
 
 Contributions will only be accepted if they are accompanied by well structured specs. Installing with composer should

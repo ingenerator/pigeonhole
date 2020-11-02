@@ -2,21 +2,21 @@
 
 namespace spec\Ingenerator\Pigeonhole\Message;
 
-use spec\ObjectBehavior;
-use Prophecy\Argument;
 use Ingenerator\Pigeonhole\Message;
+use Ingenerator\Pigeonhole\Message\KohanaMessage;
+use spec\ObjectBehavior;
 
 class KohanaMessageSpec extends ObjectBehavior
 {
-	/**
-	 * @var \Ingenerator\Pigeonhole\Message\KohanaMessage
-	 */
-	protected $subject;
+    /**
+     * @var KohanaMessage
+     */
+    protected $subject;
 
-	function it_is_initializable()
-	{
-		$this->beConstructedWith('foo', 'bar', array(), Message::SUCCESS);
-		$this->subject->shouldHaveType('Ingenerator\Pigeonhole\Message\KohanaMessage');
-	}
+    function it_is_initializable()
+    {
+        $this->beConstructedWith('foo', 'bar', [], Message::SUCCESS);
+        $this->subject->shouldHaveType(KohanaMessage::class);
+    }
 
 }

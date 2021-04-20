@@ -13,7 +13,7 @@
     }
   ],
   "require": {
-    "php":                     "^7.4",
+    "php":                     "^7.4 || ~8.0.0",
     "ingenerator/kohana-core": "^4.7"
   },
   "require-dev": {

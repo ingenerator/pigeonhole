@@ -9,16 +9,16 @@
     {
       "name":     "Andrew Coulton",
       "email":    "andrew@ingenerator.com",
-      "homepage": "http://www.ingenerator.com"
+      "homepage": "https://www.ingenerator.com"
     }
   ],
   "require": {
-    "php":                     "^7.4 || ~8.0.0",
+    "php": "~8.0.0 || ~8.1.0",
     "ingenerator/kohana-core": "^4.7"
   },
   "require-dev": {
     "kohana/koharness": "dev-master",
-    "phpspec/phpspec":  "^6.1"
+    "phpspec/phpspec": "^7.2"
   },
   "repositories": [
     {
@@ -27,7 +27,7 @@
     }
   ],
   "suggest": {
-    "zeelot/kohana-dependencies": "Service container for Kohana"
+    "ingenerator/kohana-dependencies": "Service container for Kohana"
   },
   "support": {
     "issues": "https://github.com/ingenerator/pigeonhole/issues",
@@ -44,6 +44,9 @@
     }
   },
   "config": {
-    "preferred-install": "dist"
+    "preferred-install": "dist",
+    "allow-plugins": {
+      "composer/installers": true
+    }
   }
 }

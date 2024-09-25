@@ -27,3 +27,9 @@ README  text eol=lf
 *.swf    binary
 *.zip    binary
 *.sqlite binary
+
+# Ignore paths that should not be included in an archive (eg for a distribution version)
+/.github export-ignore
+/spec export-ignore
+phpspec.yml export-ignore
+koharness.php export-ignore

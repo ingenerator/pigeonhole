@@ -13,11 +13,10 @@
     }
   ],
   "require": {
-    "php": "~8.2.0 || ~8.3.0 || ~8.4.0",
+    "php": "~8.4.0 || ~8.5.0",
     "ingenerator/kohana-core": "^4.7"
   },
   "require-dev": {
-    "kohana/koharness": "dev-master",
     "phpspec/phpspec": "dev-main@dev"
   },
   "repositories": [
@@ -44,9 +43,6 @@
     }
   },
   "config": {
-    "preferred-install": "dist",
-    "allow-plugins": {
-      "composer/installers": true
-    }
+    "preferred-install": "dist"
   }
 }

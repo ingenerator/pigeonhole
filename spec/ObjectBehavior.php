@@ -10,9 +10,7 @@
 namespace spec;
 
 // Bootstrap Kohana - ensure that we're in development mode to disable caching
-$_SERVER['KOHANA_ENV'] = 'DEVELOPMENT';
-require_once(__DIR__.'/../koharness_bootstrap.php');
-require_once KOHARNESS_SRC.'/helper_classes/Session/Fake.php';
+require_once(__DIR__.'/bootstrap.php');
 
 abstract class ObjectBehavior extends \PhpSpec\ObjectBehavior
 {

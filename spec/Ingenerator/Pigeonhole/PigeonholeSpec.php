@@ -4,19 +4,19 @@ namespace spec\Ingenerator\Pigeonhole;
 
 use Ingenerator\Pigeonhole\Message;
 use Ingenerator\Pigeonhole\Pigeonhole;
-use Session_Fake;
+use Session_Array;
 use spec\ObjectBehavior;
 
 class PigeonholeSpec extends ObjectBehavior
 {
     /**
-     * @var Session_Fake
+     * @var Session_Array
      */
     protected $mock_session;
 
     function let()
     {
-        $this->mock_session = new Session_Fake;
+        $this->mock_session = new Session_Array();
         $this->beConstructedWith($this->mock_session);
     }
 

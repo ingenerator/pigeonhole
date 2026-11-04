@@ -17,7 +17,6 @@
     "ingenerator/kohana-core": "^4.7"
   },
   "require-dev": {
-    "kohana/koharness": "dev-master",
     "phpspec/phpspec": "dev-main@dev"
   },
   "repositories": [

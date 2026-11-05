@@ -3,3 +3,4 @@
 /koharness_bootstrap.php
 composer.lock
 /.idea
+.phpunit.result.cache

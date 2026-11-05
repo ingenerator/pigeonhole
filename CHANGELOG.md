@@ -4,6 +4,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
 
+## 1.5.0 / 2026-11-05
+
+* Support PHP 8.6
+* Rewrite tests to use PHPUnit
+
 ## 1.4.0 / 2026-11-04
 
 * Support PHP 8.5

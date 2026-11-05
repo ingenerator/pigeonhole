@@ -37,9 +37,15 @@ class MessagesTest extends TestCase
         $this->pigeonhole = $this->createPigeonholeWithMessages(new Message('title', 'message', Message::SUCCESS));
 
         $content = $this->newSubject()->render();
-        $this->assertMatchesRegularExpression('_<div class="alert alert-success">_', $content);
-        $this->assertMatchesRegularExpression('_<strong>title</strong>_', $content);
-        $this->assertMatchesRegularExpression('_</strong>\s*message\s*</div>_', $content);
+        $this->assertSame(
+            <<<HTML
+                  <div class="alert alert-success">
+                  <strong>title</strong>
+                    message    </div>
+              
+            HTML,
+            $content
+        );
     }
 
     public function test_it_renders_multiple_messages(): void
@@ -75,6 +81,4 @@ class MessagesTest extends TestCase
         parent::setUp();
         $this->pigeonhole = $this->createStub(Pigeonhole::class);
     }
-
-
 }
